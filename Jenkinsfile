@@ -45,7 +45,7 @@ pipeline {
     stage('Build Image') {
       steps {
         container('docker') {
-          sh 'docker build -t jovilon/node-app:v2 .'
+          sh 'docker build -t jovilon/node-app:v3 .'
         }
       }
     }
@@ -54,7 +54,7 @@ pipeline {
         container('docker') {
             withCredentials([usernamePassword(credentialsId: 'github-jovi', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                 sh 'docker login -u $USER -p $PASS'
-                sh 'docker push jovilon/node-app:v2'
+                sh 'docker push jovilon/node-app:v3'
             }            
 
       }
