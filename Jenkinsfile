@@ -54,7 +54,7 @@ pipeline {
         container('docker') {
             withCredentials([usernamePassword(credentialsId: 'github-jovi', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                 sh 'docker login -u $USER -p $PASS'
-                sh 'docker push jovilon/my-app:v1'
+                sh 'docker push jovilon/node-app:v2'
             }            
 
       }
