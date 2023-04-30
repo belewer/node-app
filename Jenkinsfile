@@ -28,13 +28,13 @@ pipeline {
     }
   }
   stages {
-    stage('Clone') {
-      steps {
-        container('node') {
-          git branch: 'main', url: 'https://github.com/belewer/node-app.git'
-        }
-      }
-    }  
+    // stage('Clone') {
+    //   steps {
+    //     container('node') {
+    //       git branch: 'main', url: 'https://github.com/belewer/node-app.git'
+    //     }
+    //   }
+    // }  
     stage('Build dependencies') {
       steps {
         container('node') {
